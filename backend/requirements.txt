@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+aiortc
+torch
+torchvision
+Pillow
+whisper
+langchain
+langgraph
+openai
+pydantic

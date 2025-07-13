@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nvidia-device-plugin
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: nvidia-device-plugin
+  template:
+    metadata:
+      labels:
+        name: nvidia-device-plugin
+    spec:
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: nvidia-device-plugin
+          image: nvidia/k8s-device-plugin:1.0.0-beta
+          securityContext:
+            privileged: true
