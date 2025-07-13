@@ -63,13 +63,13 @@ HoloAssist combines Vision Transformers (ViT), GPT-4o, LangGraph orchestration, 
     cd deploy
     docker-compose up --build
     ```
-Backend: http://localhost:8000
+- **Backend:** http://localhost:8000
 
-Frontend: http://localhost:3000
+- **Frontend:** http://localhost:3000
 
 3. **Kubernetes deployment**
 
-AWS EKS
+- **AWS EKS**
     ```bash
     cd deploy/terraform/aws
     terraform init && terraform apply
@@ -77,7 +77,7 @@ AWS EKS
     kubectl apply -f ../k8s/
     ```
 
-GCP GKE
+- **GCP GKE**
     ```bash
     cd deploy/terraform/gcp
     terraform init && terraform apply
@@ -109,18 +109,18 @@ FastAPI Server
 ---
 
 ## Monitoring & Logging
-Prometheus: kubectl port-forward svc/prometheus 9090
+- **Prometheus:** kubectl port-forward svc/prometheus 9090
 
-Grafana: kubectl port-forward svc/grafana 3001
+- **Grafana:** kubectl port-forward svc/grafana 3001
 
-Sentry: Errors tracked automatically (set SENTRY_DSN secret)
+- **Sentry:** Errors tracked automatically (set SENTRY_DSN secret)
 
 ---
 
 ## Secrets Management
 Vault CSI injects secrets into pods—no hard-coded credentials.
 
-Example annotation on Deployment:
+- **Example annotation on Deployment:**
     ```bash
     metadata:
     annotations:
@@ -132,12 +132,12 @@ Example annotation on Deployment:
 ---
 
 ## Contributing
-Fork the repo
+1. Fork the repo
 
-Create a feature branch (git checkout -b feat/xyz)
+2. Create a feature branch (git checkout -b feat/xyz)
 
-Commit & push (git push origin feat/xyz)
+3. Commit & push (git push origin feat/xyz)
 
-Open a Pull Request—CI will run tests & linting
+4. Open a Pull Request—CI will run tests & linting
 
 
